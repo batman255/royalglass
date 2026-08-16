@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royal Glass And Hardwares — Digital Showroom</title>
+<meta name="description" content="Royal Glass And Hardwares — premium glass, doors, windows and architectural hardware.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#080807; --panel:#10100e; --panel2:#141310; --gold:#c29a55;
+  --gold2:#e0bc77; --cream:#eee4d0; --muted:#958b79; --line:#2a261f;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:Inter,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:var(--sans);overflow-x:hidden}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;z-index:20;
+  background-image:radial-gradient(#bca77e 0.7px,transparent .7px);background-size:22px 22px;
+  mask-image:linear-gradient(to bottom,black,transparent 70%);
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+.topbar{height:30px;border-bottom:1px solid #1d1b17;color:#786f61;font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;justify-content:center}
+nav{position:fixed;top:30px;left:0;right:0;height:68px;z-index:30;background:rgba(7,7,6,.76);backdrop-filter:blur(16px);border-bottom:1px solid rgba(194,154,85,.12)}
+.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:var(--serif);font-size:19px;box-shadow:0 0 22px rgba(194,154,85,.12)}
+.brand-text{font-family:var(--serif);font-weight:700;line-height:.8;font-size:17px;letter-spacing:.04em}
+.brand-text small{display:block;font-family:var(--sans);font-size:7px;letter-spacing:.28em;color:var(--muted);margin-top:6px}
+.navlinks{display:flex;gap:27px;color:#a59b8a;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.navlinks a:hover{color:var(--gold2)}
+.nav-actions{display:flex;gap:9px}
+.icon-btn{width:34px;height:34px;border:1px solid #302b23;background:#11100e;color:#d0c3ac;border-radius:4px;cursor:pointer}
+.hero{min-height:100vh;position:relative;padding-top:98px;display:grid;place-items:center;overflow:hidden}
+#scene{position:absolute;inset:0;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,transparent 0,rgba(8,8,7,.22) 28%,rgba(8,8,7,.9) 78%),linear-gradient(to bottom,rgba(8,8,7,.12),#080807 94%);z-index:1}
+.hero-copy{position:relative;z-index:2;text-align:center;width:min(720px,90%);margin-top:-15px}
+.eyebrow{color:var(--gold);font-size:9px;letter-spacing:.42em;text-transform:uppercase;margin-bottom:17px}
+h1,h2,h3{font-family:var(--serif);font-weight:600}
+h1{font-size:clamp(54px,8vw,105px);line-height:.78;margin:0;text-transform:uppercase;letter-spacing:-.03em;text-shadow:0 4px 40px rgba(0,0,0,.7)}
+.hero-copy p{max-width:540px;margin:25px auto;color:#aaa08f;font-size:12px;line-height:1.9}
+.ctas{display:flex;justify-content:center;gap:10px}
+.btn{padding:13px 22px;border:1px solid #57452d;background:linear-gradient(180deg,#c09a5a,#8f6b38);color:#080706;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:2px;box-shadow:0 10px 35px rgba(0,0,0,.3)}
+.btn.secondary{background:rgba(10,10,9,.55);color:#c7b79b;border-color:#41372a}
+.section{padding:105px 0;border-top:1px solid #191713;position:relative}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+.kicker{font-size:9px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase}
+.section h2{font-size:52px;line-height:.9;margin:9px 0 0}
+.section-intro{max-width:410px;color:#8f8779;font-size:11px;line-height:1.8}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:linear-gradient(145deg,#151410,#0c0c0a);border:1px solid #28231c;min-height:340px;position:relative;overflow:hidden;transition:.35s transform,.35s border-color,.35s box-shadow}
+.card:hover{transform:translateY(-7px);border-color:#6b512e;box-shadow:0 25px 70px rgba(0,0,0,.55)}
+.card-visual{height:230px;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#32281b,#11100e 60%,#0b0b0a)}
+.card-visual:after{content:"";position:absolute;width:70%;height:70%;border:1px solid rgba(194,154,85,.12);transform:rotate(45deg)}
+.product-object{width:100px;height:170px;border:4px solid #9e7a42;box-shadow:inset 0 0 35px #050504,0 12px 40px rgba(0,0,0,.8);position:relative;transform:perspective(600px) rotateY(-12deg)}
+.product-object:before{content:"";position:absolute;left:10px;right:10px;top:13px;bottom:13px;border:1px solid #3b3224;background:linear-gradient(90deg,rgba(255,255,255,.03),rgba(255,255,255,.16),rgba(255,255,255,.02))}
+.handle{position:absolute;right:-20px;top:50%;width:32px;height:8px;border:3px solid #b99351;border-left:0;border-radius:0 8px 8px 0}
+.card-info{padding:19px 20px}
+.card-info small{color:var(--gold);font-size:8px;letter-spacing:.18em;text-transform:uppercase}
+.card-info h3{margin:8px 0 5px;font-size:23px}
+.card-info p{color:#7e776b;font-size:10px;margin:0}
+.price{color:#c8a66d;font-size:12px;margin-top:14px}
+.showroom{min-height:690px;background:linear-gradient(180deg,#080807,#0d0c0a);overflow:hidden}
+.showroom-inner{position:relative;min-height:570px;border:1px solid #242019;background:radial-gradient(circle at 50% 45%,#242019 0,#0c0c0a 55%,#070706 100%);display:grid;place-items:center;overflow:hidden}
+.showroom-inner:before,.showroom-inner:after{content:"";position:absolute;background:#292319;opacity:.5}
+.showroom-inner:before{width:1px;height:100%;left:50%}.showroom-inner:after{height:1px;width:100%;top:63%}
+.door-stage{width:260px;height:410px;border:7px solid #8b6a3c;background:linear-gradient(135deg,#15110c,#312719,#0c0b09);box-shadow:0 0 0 1px #c39c59,0 40px 100px #000;position:relative;transform:perspective(900px) rotateY(-14deg);transition:transform .2s}
+.door-stage .glass{position:absolute;inset:25px 22px 90px;background:linear-gradient(110deg,rgba(255,255,255,.04),rgba(157,175,176,.16),rgba(255,255,255,.02));border:1px solid rgba(218,225,218,.18)}
+.door-stage .big-handle{position:absolute;right:23px;top:48%;height:110px;width:12px;background:#b28b4e;border-radius:8px;box-shadow:0 0 12px rgba(194,154,85,.4)}
+.hotspot{position:absolute;width:18px;height:18px;border-radius:50%;border:1px solid var(--gold);background:#16120c;color:var(--gold);display:grid;place-items:center;font-size:9px;box-shadow:0 0 0 7px rgba(194,154,85,.06)}
+.hotspot.one{left:24%;top:32%}.hotspot.two{right:27%;top:45%}.hotspot.three{left:31%;bottom:17%}
+.hotspot:hover{background:var(--gold);color:#080807}
+.showroom-label{position:absolute;left:25px;top:25px}.showroom-label h3{font-size:34px;margin:7px 0}.showroom-label p{max-width:270px;color:#827a6d;font-size:10px;line-height:1.7}
+.feature{display:grid;grid-template-columns:1.1fr .9fr;gap:15px}
+.feature-image{min-height:430px;border:1px solid #272119;background:radial-gradient(circle at 60% 40%,#453523,#17130e 45%,#0b0b09);position:relative;overflow:hidden}
+.feature-image:before{content:"";position:absolute;inset:45px;background:linear-gradient(90deg,#16110c,#554027 35%,#11100d 70%);transform:skewY(-7deg);box-shadow:0 35px 70px #000}
+.feature-image:after{content:"ROYAL GLASS";position:absolute;left:30px;bottom:25px;font-family:var(--serif);font-size:12px;letter-spacing:.25em;color:#d2b171}
+.feature-copy{border:1px solid #272119;padding:55px 45px;background:#0d0d0b}.feature-copy h2{font-size:48px;margin:8px 0 20px}.feature-copy p{color:#898174;font-size:11px;line-height:2}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+.trust-card{border:1px solid #272119;padding:25px;background:#0e0e0c}.trust-card span{color:var(--gold);font-size:9px;letter-spacing:.15em;text-transform:uppercase}.trust-card h3{font-size:20px;margin:10px 0 0}
+.checkout{display:grid;grid-template-columns:1.15fr .85fr;gap:15px}.panel{border:1px solid #29241c;background:#0e0e0c;padding:30px}.panel h3{font-size:30px;margin:0 0 22px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:8px;color:#756e63;text-transform:uppercase;letter-spacing:.15em}.field input,.field textarea{background:#090908;border:1px solid #28231c;color:#ddd2bf;padding:12px;outline:0;font-size:10px}.field textarea{min-height:80px;resize:vertical}
+.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:20px}.pay{border:1px solid #30291f;background:#11100e;padding:17px;cursor:pointer;text-align:left;color:#a99e8b}.pay.active{border-color:#a27d43;box-shadow:inset 0 0 0 1px #a27d43}.pay b{display:block;color:#d7c29e;font-size:11px;margin-bottom:6px}.pay span{font-size:8px;color:#71695e}.qr{margin-top:15px;border:1px dashed #5d4a2e;min-height:180px;display:grid;place-items:center;background:#0b0b09}.qr-box{width:120px;height:120px;background:repeating-linear-gradient(45deg,#e8ddc8 0 4px,#10100e 4px 8px);border:9px solid #eee4d0}
+.total{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid #28231c;margin-top:22px;color:#a99d89}.total strong{color:#d9bb80;font-size:20px}
+footer{padding:55px 0 30px;border-top:1px solid #201c17;background:#060605}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px}.footer-title{font-family:var(--serif);font-size:28px}.footer p,.footer a{display:block;color:#756e63;font-size:10px;line-height:1.9;margin:8px 0}.copyright{border-top:1px solid #1c1914;margin-top:35px;padding-top:20px;color:#514c45;font-size:8px;letter-spacing:.1em;text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(28px);transition:.8s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.navlinks{display:none}.products{grid-template-columns:1fr 1fr}.feature,.checkout{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.container{width:min(100% - 24px,1180px)}.topbar{font-size:7px}.brand-text{font-size:14px}.nav-actions .icon-btn:nth-child(2){display:none}.hero{min-height:760px}.hero-copy h1{font-size:54px}.ctas{flex-direction:column;width:220px;margin:auto}.section{padding:75px 0}.section-head{display:block}.section h2{font-size:42px}.products,.trust{grid-template-columns:1fr}.showroom-inner{min-height:530px}.door-stage{width:205px;height:340px}.showroom-label{left:18px;top:18px}.showroom-label h3{font-size:27px}.fields,.pay-methods{grid-template-columns:1fr}.field.full{grid-column:auto}.feature-copy{padding:35px 25px}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">Premium Glass • Doors • Windows • Architectural Hardware • Kumarapalayam</div>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#home">
+      <div class="brand-mark">R</div>
+      <div class="brand-text">ROYAL GLASS<small>AND HARDWARES</small></div>
+    </a>
+    <div class="navlinks">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#showroom">Showroom</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions"><button class="icon-btn" aria-label="Search">⌕</button><button class="icon-btn" onclick="location.hash='checkout'" aria-label="Cart">🛒</button></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div id="scene"></div><div class="hero-overlay"></div>
+  <div class="hero-copy reveal">
+    <div class="eyebrow">Architectural Hardware • Established Showroom</div>
+    <h1>Royal Glass<br>And Hardwares</h1>
+    <p>Collecting timeless glass, doors, windows and architectural details for homes and refined spaces.</p>
+    <div class="ctas"><a class="btn" href="#shop">Explore Products</a><a class="btn secondary" href="#showroom">Enter Showroom</a></div>
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="kicker">The Collection</div><h2>Masterworks</h2></div><p class="section-intro">Premium hardware and architectural details selected for enduring style, function and finish.</p></div>
+    <div class="products">
+      <article class="card reveal"><div class="card-visual"><div class="product-object"><div class="handle"></div></div></div><div class="card-info"><small>Door Hardware</small><h3>Royal Entry Handle</h3><p>Antique brass architectural handle.</p><div class="price">₹4,850</div></div></article>
+      <article class="card reveal"><div class="card-visual"><div class="product-object" style="width:130px;height:155px;border-color:#7c8480"><div class="handle" style="right:-14px;background:#777"></div></div></div><div class="card-info"><small>Glass & Windows</small><h3>Framed Glass System</h3><p>Minimal architectural glass fitting.</p><div class="price">₹8,250</div></div></article>
+      <article class="card reveal"><div class="card-visual"><div class="product-object" style="width:175px;height:110px;transform:perspective(600px) rotateY(-18deg) rotateX(12deg)"><div class="handle" style="right:25px;top:45%"></div></div></div><div class="card-info"><small>Window Fittings</small><h3>Precision Window Set</h3><p>Elegant hardware for modern frames.</p><div class="price">₹2,950</div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section showroom" id="showroom">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="kicker">Digital Showroom</div><h2>The Private Collection</h2></div><p class="section-intro">Move through a cinematic collection of architectural details. Hover the stage and explore.</p></div>
+    <div class="showroom-inner reveal" id="showroomStage">
+      <div class="showroom-label"><div class="kicker">01 / Grand Foyer</div><h3>Architectural Detail</h3><p>Doors, handles and glass designed to make the smallest details feel exceptional.</p></div>
+      <div class="door-stage" id="door">
+        <div class="glass"></div><div class="big-handle"></div>
+        <div class="hotspot one">+</div><div class="hotspot two">+</div><div class="hotspot three">+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="feature">
+      <div class="feature-image reveal"></div>
+      <div class="feature-copy reveal"><div class="kicker">The Royal Standard</div><h2>Crafted For The Home.</h2><p>Royal Glass And Hardwares brings together glass, doors, windows, handles, locks, hinges and fittings for residential and architectural projects.</p><div class="trust"><div class="trust-card"><span>01</span><h3>Quality Products</h3></div><div class="trust-card"><span>02</span><h3>Wide Selection</h3></div><div class="trust-card"><span>03</span><h3>Professional Service</h3></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="checkout">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="kicker">Secure Checkout</div><h2>Finalize Order.</h2></div><p class="section-intro">A simple checkout designed for secure online payment or UPI QR payment.</p></div>
+    <div class="checkout">
+      <div class="panel reveal">
+        <h3>Customer Details</h3>
+        <div class="fields">
+          <div class="field"><label>Full Name</label><input placeholder="Your name"></div>
+          <div class="field"><label>Mobile</label><input placeholder="9842754428"></div>
+          <div class="field full"><label>Address</label><textarea placeholder="Delivery address"></textarea></div>
+          <div class="field"><label>City</label><input placeholder="Kumarapalayam"></div>
+          <div class="field"><label>PIN Code</label><input placeholder="000000"></div>
+        </div>
+        <h3 style="margin-top:30px">Payment</h3>
+        <div class="pay-methods">
+          <button class="pay active" onclick="selectPay(this,'online')"><b>Pay Online</b><span>Net Banking • UPI • Cards where supported</span></button>
+          <button class="pay" onclick="selectPay(this,'qr')"><b>Pay by QR</b><span>Scan the shop's UPI QR and pay</span></button>
+        </div>
+        <div class="qr" id="qr" style="display:none"><div><div class="qr-box"></div><p style="font-size:9px;text-align:center;color:#8d8476">QR PLACEHOLDER — CONNECT YOUR UPI QR</p></div></div>
+      </div>
+      <div class="panel reveal">
+        <h3>Order Summary</h3>
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:#9a9181"><span>Royal Entry Handle × 1</span><strong>₹4,850</strong></div>
+        <div class="total"><span>Subtotal</span><strong>₹4,850</strong></div>
+        <div class="total" style="border:0;margin:0;padding-top:0"><span>Delivery</span><span>Calculated at confirmation</span></div>
+        <div class="total"><span>Total</span><strong>₹4,850</strong></div>
+        <button class="btn" style="width:100%;margin-top:15px" onclick="alert('Connect your payment gateway here.')">Confirm & Pay ₹4,850</button>
+        <p style="font-size:8px;color:#625c52;line-height:1.8">Payment gateway credentials should be connected server-side. Replace the QR placeholder with the shop's verified UPI QR before launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="kicker">Visit The Showroom</div><h2>Royal Glass.</h2></div><p class="section-intro">Speak with us about glass, doors, windows and hardware for your next project.</p></div>
+    <div class="feature">
+      <div class="feature-copy reveal"><div class="kicker">Contact</div><h2>Mr. S. Thangaraj</h2><p><b style="color:#d0b27a">9842754428</b><br><br>7A/2, Palli Palayam Road,<br>Kumarapalayam, Komarapalayam,<br>Namakkal, Tamil Nadu, India</p><div class="ctas" style="justify-content:flex-start"><a class="btn" href="tel:9842754428">Call Now</a><a class="btn secondary" href="https://www.google.com/maps/search/?api=1&query=Royal%20Glass%20And%20Hardwares%20Kumarapalayam" target="_blank">Get Directions</a></div></div>
+      <div class="feature-image reveal" style="display:grid;place-items:center"><div style="text-align:center"><div class="brand-mark" style="margin:auto;width:70px;height:70px;font-size:34px">R</div><div style="font-family:var(--serif);font-size:27px;margin-top:15px">Royal Glass</div><div class="kicker" style="margin-top:8px">And Hardwares</div></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-title">Royal Glass<br>And Hardwares</div><p>Premium glass, doors, windows and architectural hardware.</p></div>
+      <div><div class="kicker">Explore</div><a href="#home">Home</a><a href="#shop">Shop</a><a href="#showroom">Showroom</a><a href="#about">About</a></div>
+      <div><div class="kicker">Collection</div><a href="#shop">Glass</a><a href="#shop">Doors</a><a href="#shop">Windows</a><a href="#shop">Handles & Fittings</a></div>
+      <div><div class="kicker">Contact</div><a href="tel:9842754428">9842754428</a><p>7A/2, Palli Palayam Road,<br>Kumarapalayam, Namakkal,<br>Tamil Nadu</p></div>
+    </div>
+    <div class="copyright">© 2026 Royal Glass And Hardwares • Privacy • Terms • Shipping • Returns</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const sceneEl=document.getElementById('scene');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,.1,100);
+camera.position.set(0,0.35,6.8);
+const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth,innerHeight);
+renderer.outputEncoding=THREE.sRGBEncoding;
+sceneEl.appendChild(renderer.domElement);
+
+const ambient=new THREE.AmbientLight(0x9d8864,1.25);scene.add(ambient);
+const key=new THREE.PointLight(0xd7a85e,12,18);key.position.set(2.8,3.5,4);scene.add(key);
+const rim=new THREE.PointLight(0x6e5432,9,15);rim.position.set(-3,-1,2);scene.add(rim);
+
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(14,14),new THREE.MeshStandardMaterial({color:0x090908,roughness:.9,metalness:.05}));
+floor.rotation.x=-Math.PI/2;floor.position.y=-1.5;scene.add(floor);
+
+const group=new THREE.Group();scene.add(group);
+const frameMat=new THREE.MeshStandardMaterial({color:0x9d7438,metalness:.88,roughness:.28});
+const woodMat=new THREE.MeshStandardMaterial({color:0x19130c,metalness:.05,roughness:.58});
+const glassMat=new THREE.MeshPhysicalMaterial({color:0x7f9291,transparent:true,opacity:.22,roughness:.05,metalness:.08,transmission:.5});
+
+function box(w,h,d,mat,x,y,z){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);m.position.set(x,y,z);group.add(m);return m}
+box(2.4,4.5,.22,frameMat,0,.5,0);
+box(2.05,4.15,.16,woodMat,0,.5,.02);
+box(1.7,2.55,.05,glassMat,0,1.05,-.08);
+box(.09,1.2,.12,frameMat,.73,.15,.02);
+box(.14,.14,.18,frameMat,.78,.15,.04);
+
+for(let i=-4;i<=4;i++){
+  const beam=new THREE.Mesh(new THREE.BoxGeometry(.015,.015,6),new THREE.MeshBasicMaterial({color:0x5a4a31,transparent:true,opacity:.22}));
+  beam.position.set(i*.55,-1.48,-1.5);scene.add(beam);
+}
+let mouseX=0,mouseY=0;
+addEventListener('pointermove',e=>{mouseX=(e.clientX/innerWidth-.5)*2;mouseY=(e.clientY/innerHeight-.5)*2});
+function animate(){
+ requestAnimationFrame(animate);
+ group.rotation.y+=(mouseX*.18-group.rotation.y)*.035;
+ group.rotation.x+=(-mouseY*.08-group.rotation.x)*.035;
+ key.position.x=2.8+mouseX*1.5; key.position.y=3.5-mouseY;
+ renderer.render(scene,camera);
+}
+animate();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+
+const door=document.getElementById('door'),stage=document.getElementById('showroomStage');
+stage.addEventListener('pointermove',e=>{const r=stage.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;door.style.transform=`perspective(900px) rotateY(${x*-25-8}deg) rotateX(${y*8}deg)`});
+stage.addEventListener('pointerleave',()=>door.style.transform='perspective(900px) rotateY(-14deg)');
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelector('.hero .reveal').classList.add('show');
+
+function selectPay(el,type){
+ document.querySelectorAll('.pay').forEach(x=>x.classList.remove('active'));el.classList.add('active');
+ document.getElementById('qr').style.display=type==='qr'?'grid':'none';
+}
+</script>
+</body>
+</html>
